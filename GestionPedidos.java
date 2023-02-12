@@ -14,11 +14,13 @@ public class GestionPedidos {
 		Cliente cliente2 = new Cliente();
 		Cliente cliente3 = new Cliente();
 
+
 		Producto producto1 = new Producto();
 		Producto producto2 = new Producto();
 		Producto producto3 = new Producto();
 		Producto producto4 = new Producto();
 		Producto producto5 = new Producto();
+
 
 		/**
 		 * crear de variables para poder tomarlas al crear los clientes (con .set)
@@ -467,10 +469,10 @@ public class GestionPedidos {
 
 
 
-		 /**
-		  * seleccion de productos
-		  */
-			System.out.println("\n###Seleccione el producto que desea (se pueden pedir hasta dos productos):");
+		/**
+		* seleccion de productos
+		*/
+		System.out.println("\n###Seleccione el producto que desea (se pueden pedir hasta dos productos)");
 		System.out.println(
 					"1. Producto 1 -> " + producto1.getNombre()
 				+ "\n2. Producto 2 -> " + producto2.getNombre()
@@ -478,11 +480,16 @@ public class GestionPedidos {
 				+ "\n4. Producto 4 -> " + producto4.getNombre()
 				+ "\n5. Producto 5 -> " + producto5.getNombre()
 		);
-		sc.nextInt();
-		System.out.println("Cantidad del producto");
-		i = sc.nextInt();
+		
+		/**
+		 * main del stock
+		 */
+		System.out.print("\nNumero del producto que deseas: ");
+		int producto = sc.nextInt();
+		System.out.print("Cantidad del mismo: ");
+		int cantidad = sc.nextInt();
 
-			
+
 		/**
 		 * volver a pedir el menu
 		 */
@@ -498,13 +505,30 @@ public class GestionPedidos {
 					+ "\n3. Producto 3 -> " + producto3.getNombre()
 					+ "\n4. Producto 4 -> " + producto4.getNombre()
 					+ "\n5. Producto 5 -> " + producto5.getNombre()
-			);
+					);
+			System.out.print("\nNumero del producto que deseas: ");
 			sc.nextInt();
-			System.out.println("Cantidad del producto");
-			i = sc.nextInt();
+			System.out.print("Cantidad del mismo: ");
+			sc.nextInt();
+
 		} else {
 			System.out.println("No quiere otro producto. Continuamos");
 		}
+
+		producto1.realizarPedido(producto, cantidad);
+		producto1.comprobarStock();
+
+		producto2.realizarPedido(producto, cantidad);
+		producto2.comprobarStock();
+
+		producto3.realizarPedido(producto, cantidad);
+		producto3.comprobarStock();
+
+		producto4.realizarPedido(producto, cantidad);
+		producto4.comprobarStock();
+
+		producto5.realizarPedido(producto, cantidad);
+		producto5.comprobarStock();
 		
 		
 		
@@ -520,13 +544,10 @@ public class GestionPedidos {
 				+ "TOTAL ---------------------------------> "
 		);*/
 
-		
-		
-
 		/**
 		 * se realiza el pago
 		 */
-		System.out.println("\n###Pago de los productos");
+		/*System.out.println("\n###Pago de los productos");
 		
 		PasarelaDePago pago = new PasarelaDePago();
 		
@@ -552,7 +573,7 @@ public class GestionPedidos {
 		System.out.println("Importe antes del pago: " + pago.getImporte());
 		pago.cuenta("123456");
 		System.out.println("Importe despues del pago desde cuenta: " + pago.getImporte());
-		System.out.println("Codigo de pago: " + pago.getCodigoPago());
+		System.out.println("Codigo de pago: " + pago.getCodigoPago());*/
 		
 		
 
@@ -560,7 +581,7 @@ public class GestionPedidos {
 		/**
 		 * anyadimos el codigo del pedido al historial
 		 */
-		System.out.println("Se ha anyadido su pedido al historial");
+		/*System.out.println("Se ha anyadido su pedido al historial");*/
 		/**
 		 * Metodo agregarPedido(Pedido pedido)
 		 */
