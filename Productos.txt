@@ -1,0 +1,5 @@
+Patata, 2,20
+Alcachofa, 7
+Pimientos 9,50
+Brócoli, 3,30
+Pan Integral, 1,25
